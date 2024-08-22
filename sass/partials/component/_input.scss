@@ -1,0 +1,126 @@
+@charset "utf-8";
+@forward "../common/";
+@forward "./mixin";
+@use "../common/" as common;
+@use "./mixin" as *;
+
+/**
+ * リンクの左外側余白の指定
+ */
+@mixin set-link-margin-left($margin-left-scale) {
+	margin-left: common.calcSizeByScale($margin-left-scale);
+}
+
+/**
+ * ボタンの形状を設定：ポイント時は手、押下時は背景色を変更する
+ */
+ @mixin set-button-event-parent($cursor: pointer, $background-color: common.$button-color--activate) {
+	&:hover {
+		cursor: $cursor;
+	}
+	&:active {
+		background-color: $background-color;
+	}
+}
+
+/* 入力部品の基本スタイル */
+.input {
+	
+	&-item {
+		// 入力項目ラベルと入力部品をあわせた単位の基本スタイル
+		margin: common.calcSizeByScale(1.25);
+	}
+
+	&--submit {
+		// sabumitボタン表示領域のスタイル
+		margin-top: common.calcSizeByScale(1.75);
+		margin-left: common.calcSizeByScale(9.5);
+		margin-bottom: common.calcSizeByScale(1.75);
+	}
+
+	&__label {
+		// 入力項目ラベルの基本スタイル
+		@include common.clear-box-model();
+		display: inline-block;
+		width: common.calcSizeByScale(8);
+	}
+
+	&__link {
+		// リンクの基本スタイル
+		text-decoration: none;
+		&--signup {
+			// ユーザ登録リンク
+			margin-left: common.calcSizeByScale(7.5);
+		}
+		&--cancel {
+			// キャンセルリンク
+			@include set-link-margin-left(2.5);
+		}
+		&--icon {
+			// 一覧に表示する編集・削除のアイコンリンク
+			&:link {
+				// 未訪問
+				color:common.$theme-color;
+			}
+			&:visited {
+				// 訪問済
+				color:common.$theme-color;
+			}
+			&:hover {
+				// マウスポイント時
+				color: common.$icon-color--hover;
+			}
+		}
+		&--delete {
+			margin-left: auto;
+		}
+	}
+
+	&__button {
+		// ボタンの基本スタイル
+		@include common.clear-box-model();
+		@include common.set-oval();
+		color: common.$default-button-color--fore;
+		background-color: common.$default-button-color--back;
+		width: fit-content;
+		padding: common.calcSizeByScale(0.15) common.calcSizeByScale(0.5);
+		// ボタンの振舞い
+		@include set-button-event-parent();
+
+		&--search {
+			@extend .input__button;
+			color: common.$button-color--fore;
+			background-color: common.$button-color--search;
+			width: common.calcSizeByScale(20);
+			padding: common.calcSizeByScale(0.75) 0;
+		}
+
+	}
+	
+	&__text {
+		// テキストボックスの基本スタイル
+		@include common.clear-box-model();
+		@include set-text-box-parent(5px); // 角丸矩形が基本スタイル
+		border-color: common.$input-color--placeholder;
+		width: common.calcSizeByScale(20);
+		height: common.calcSizeByScale(2.25);
+
+		&--read-only {
+			// テキストボックスの編集不可（表示のみ）スタイル
+			border-width: 0;
+			cursor: not-allowed;
+		}
+	}
+
+	&__select {
+		// セレクトボックスの基本スタイル：テキストボックスのスタイルに準拠だが、差分は以下に追記
+		@extend .input__text;
+	}
+
+	&__radio {
+		&--read-only {
+			pointer-events: none;
+		}
+	}
+
+}

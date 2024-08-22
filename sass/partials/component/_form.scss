@@ -1,0 +1,41 @@
+@charset "utf-8";
+@forward "../common/";
+@forward "./mixin";
+@use "../common/" as common;
+@use "./mixin" as *;
+
+.form {
+	// ボックスモデルの初期化
+	@include common.clear-box-model();
+
+	&__title {
+		// 入力領域タイトルのスタイル
+		padding: 0 common.calcSizeByScale(0.75);
+		font-size: common.calcSizeByScale(1.25);
+		font-weight: bold;
+		text-align: center;
+	}
+
+	&__container {
+		// 入力領域のスタイル
+		@include set-default-fieldset();
+		
+		&--login {
+			// ログイン画面の基本スタイル
+			@include set-default-fieldset();
+			border-width: 0.75px;
+			margin: common.calcSizeByScale(2.75) auto;
+			padding: common.calcSizeByScale(0) common.calcSizeByScale(3.0);
+		}
+
+		&--search {
+			border-width: 0;
+		}
+
+		&--update {
+			@include common.clear-box-model();
+			width: fit-content;
+			border-width: 0;
+		}
+	}
+}

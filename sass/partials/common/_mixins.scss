@@ -1,0 +1,38 @@
+@charset "utf-8";
+
+// 角丸矩形の角の半径のデフォルト値
+$_DEFAULT_BORDER_RADIUS: 5px;
+
+// **
+// * ブロック要素の中央揃え：内容の幅に依存する
+// */
+@mixin set-block-align--center() {
+	width:fit-content;
+	margin: 0 auto;	
+}
+
+// **
+// * 余白削除：外側余白・内側余白ともに削除する
+// */
+@mixin clear-box-model() {
+	margin: 0;
+	padding: 0;
+}
+
+// **
+// * 矩形の基本スタイルを設定する
+// * @param $border-radius 角丸の半径（px単位で指定）
+// */
+@mixin set-default-rectangle() {
+	border: 1px solid dimgray;
+}
+
+// **
+// * 指定された半径の角丸矩形を描画する
+// * @param $border-radius 角丸の半径（px単位で指定）
+// */
+@mixin set-oval($border-radius: $_DEFAULT_BORDER_RADIUS) {
+	@include set-default-rectangle();
+	border-radius: $border-radius;
+}
+
