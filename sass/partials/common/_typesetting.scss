@@ -1,0 +1,47 @@
+@charset "utf-8";
+
+/* Google Fonts Icons の読み込み */
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
+
+// フォントサイズの基本スタイル
+$font-scale--default: 62.5%; // フォントサイズの基本倍率：1rem = 10px
+$font-size--default: 1.4rem; // フォントサイズの基本サイズ
+
+$font-scale--site-title: 1.35;                                         // サイトヘッダのタイトルのフォントスケール
+$font-size--site-title: $font-size--default * $font-scale--site-title; // サイトヘッダのタイトルのフォントサイズ
+
+$font-scale--form-title: 1.10; // 入力領域タイトルのフォントスケール
+
+$font-size--table-header: 1.10rem; // テーブルの見出しのフォントサイズ
+$font-size--table-data: 1.25rem;   // テーブルのセルのフォントサイズ
+
+$font-scale--quad: 0.25;     // フォントサイズのクワタ（0.25rem = 2.5px）
+$font-scale--half: $font-scale--quad * 2; // フォントサイズの半分
+$font-scale--tri-quad: 0.75; // フォントサイズの3クワタ
+
+// 基本スタイルのフォントファミリー：デフォルトの画面表示用
+$font-family--default: "Helvetica Neue",
+                      Arial,
+                      "Hiragino Kaku Gothic ProN",
+                      "Hiragino Sans",
+                      Meiryo,
+                      sans-serif;
+// 著作権表示のフォントファミリー：著作権表示用（ページフッタに共通表示）
+$font-family--copyright: "Times New Roman",
+                         "YuMincho",
+                         "Hiragino Mincho ProN",
+                         "Yu Mincho",
+                         "MS PMincho";
+ 
+/**
+ * 検索タイトル用アイコン：虫眼鏡アイコン
+ * 参考URL：https://zenn.dev/yurukei20/articles/2b315c826be4d8
+ */
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+

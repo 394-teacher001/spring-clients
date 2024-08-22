@@ -1,0 +1,101 @@
+@charset "utf-8";
+@forward "../common/";
+@use "../common/" as common;
+
+// 矩形の角丸のデフォルトの半径
+$_DEFAULT_BORDER_RADIUS: 5px;
+
+// /**
+//	* テキストボックスの基本スタイルを設定する
+//	*/
+@mixin set-text-box-parent($border-radius: $_DEFAULT_BORDER_RADIUS) {
+	@include set-default-text-box-parent();
+	border-radius: $border-radius;
+}
+
+// /**
+//	* テキストボックスの基本スタイルを設定する
+//	*/
+@mixin set-default-text-box-parent() {
+	@include common.set-default-rectangle();
+	border-color: common.$base-color--border;
+	padding: 0 common.calcSizeByScale(0.25);
+	&::placeholder {
+		color: common.$input-color--placeholder;
+	}	
+}
+
+// /**
+//	* フィールドセットの基本スタイル
+//	*/
+@mixin set-default-fieldset() {
+	@include common.clear-box-model();
+	width: fit-content;
+}
+
+// /**
+//  * テーブルのデフォルトスタイルを設定する：デフォルトは「border-collapse: collapse」
+//  * @param $is-borderless yesまたは省略された場合は枠線非表示、それ以外は枠線表示
+//  */
+@mixin set-default-table-style($is-bordered: "yes", $is-bottom-bordered: "no") {
+	table {
+		@if $is-bordered == "no" {
+			// 枠線非表示
+			border-width: 0;
+		}
+		font-size: common.$font-size--table-data;
+		border-collapse: collapse;
+		th, td {
+			@if $is-bordered == "no" {
+				// 枠線非表示：下枠線のみ表示
+				border-width: 0;
+			}
+			padding: common.calcSizeByScale(0.5) common.calcSizeByScale(1.0);
+		}
+		tr {
+			@if $is-bottom-bordered == "yes" {
+				border-bottom: 1px solid lightgray;
+			}
+		}
+		th {
+			color: common.$theme-color;
+			font-size: common.$font-size--table-header;
+			text-align: left;
+		}
+	}
+}
+
+// /**
+//  * テーブル見出しをテーマカラーにする
+//  */
+@mixin switch-theme-color-to-th-parent() {
+	.table {
+		&--company {
+			@include switch-fore-theme-color-parent($target: company);
+		}
+		&--contact {
+			@include switch-fore-theme-color-parent($target: contact);
+		}
+		&--borderless {
+			
+		}
+	}
+}
+
+// /**
+//  * テーブル見出しの前景色をテーマカラーにする
+//  * @param $target 取引先の場合は「company」それ以外は「contact」：省略不可
+//  */
+@mixin switch-fore-theme-color-parent($target) {
+	.table__cell {
+		&--header {
+			@if $target == "company" {
+				color: common.$theme-color--company;
+			} @else {
+				color: common.$theme-color--contact;
+			}
+		}
+	}
+}
+
+

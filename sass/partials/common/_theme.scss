@@ -1,0 +1,46 @@
+@charset "utf-8";
+
+//* 色の登録 */
+$theme-color:            dimgray;    // テーマカラー
+$theme-color--company:   #3498DB;    // 取引先テーマ
+$theme-color--contact:   #1ABC9C;    // 連絡先テーマ
+
+$accent-color--black:     black;     // アクセントカラー：黒
+$accent-color--white:     white;     // アクセントカラー：白
+$accent-color--graywhite: #EDEDED;   // アクセントカラー：グレーホワイト
+$accent-color--lightgray: lightgray; // アクセントカラー：ライトグレー
+$accent-color--gainsboro: gainsboro; // アクセントカラー：ゲンズボロ
+$accent-color--red:       red;       // アクセントカラー：赤
+$accent-color--tomato:    tomato;
+$accent-color--navy:      navy;      // アクセントカラー：ネイビー
+$accent-color--khaki:     darkkhaki; // アクセントカラー：カーキ
+$accent-color--peru:      peru;      // アクセントカラー：ペルー
+$accent-color--test:      lime;      // テスト用背景色：上書き前提の背景色
+
+$base-color--fore:           $theme-color;             // 基本文字色
+$base-color--back:           $accent-color--white;     // 基本背景色
+$base-color--border:         $theme-color;             // 基本枠線色
+$base-color--error:          $accent-color--red;       // 基本エラーメッセージ文字色
+
+$header-color--fore:          $accent-color--graywhite; // サイトヘッダー前景色（文字色）
+$header-color--back:          $accent-color--black;     // サイトヘッダ背景色
+$header-link-color--fore:     $accent-color--khaki;     // サイトヘッダ内ナビゲーションリンク前景色
+$header-link-color--active:   $accent-color--peru;      // サイトヘッダ内ナビゲーションリンク押下時色
+$header-logout-color--active: $accent-color--gainsboro; // ログアウトボタン押下時の背景色
+
+$page-header--fore:          $accent-color--white;      // ページヘッダ前景色（文字色）
+$page-header-color--company: $theme-color--company;     // 取引先ヘッダ背景色
+$page-header-color--contact: $theme-color--contact;     // 連絡先ヘッダ背景色
+
+$input-color--placeholder: $accent-color--lightgray;    // プレースホルダ文字色
+
+$default-button-color--fore: $theme-color;              // デフォルトのボタン前景色
+$default-button-color--back: $accent-color--graywhite;  // デフォルトのボタン背景色
+
+$button-color--fore:          $accent-color--white;     // ボタントップ文字色
+$button-color--search:        $accent-color--navy;      // 検索系ボタン背景色
+$button-color--modify:        $accent-color--red;       // 非検索系（登録・更新・削除）ボタン背景色
+$button-color--activate:      $accent-color--lightgray;
+$button-color--modify-active: $accent-color--tomato;
+
+$icon-color--hover: $accent-color--tomato; // 編集・削除アイコンのマウスポイント時の前景色

@@ -1,0 +1,456 @@
+@charset "UTF-8";
+/* Google Fonts Icons の読み込み */
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
+/**
+ * 検索タイトル用アイコン：虫眼鏡アイコン
+ * 参考URL：https://zenn.dev/yurukei20/articles/2b315c826be4d8
+ */
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+/* 枠線の非表示 */
+.u-border--hidden {
+  border-width: 0;
+}
+
+/* ブロックエレメントの非表示 */
+.u-block--hidden {
+  display: none;
+}
+
+/* ブロックエレメントの上端寄せ */
+.u-align--top {
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* ブロックエレメントの中央寄せ */
+.u-align--center {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+/* ブロックエレメントの右寄せ */
+.u-align--right {
+  margin-left: auto;
+}
+
+/* インラインエレメントの中央寄せ */
+.u-text-align--center {
+  text-align: center;
+}
+
+/* インラインエレメントの左寄せ */
+.u-text-align--left {
+  text-align: left;
+}
+
+/* インラインエレメントの右寄せ */
+.u-text-align--right {
+  text-align: right;
+}
+
+/* 箇条書き行頭文字の非表示 */
+.u-list-style--none {
+  list-style-type: none;
+}
+
+/* フォントスタイルの斜体 */
+.u-font-style--italic {
+  font-style: italic;
+}
+
+/* エラーメッセージの文字色 */
+.u-text--error {
+  color: tomato;
+}
+
+/* インライン要素に設定 */
+.u-display--inline {
+  display: inline;
+}
+
+/* アイコンとしての設定 */
+.u-icon {
+  display: inline-block;
+  margin-right: 1.4rem;
+}
+
+/* 必須項目表示 */
+.u-required:after {
+  content: "*";
+}
+
+/* 小さい文字サイズ */
+.u-text--small {
+  font-size: 75%;
+}
+
+/* 大きい文字サイズ */
+.u-text--large {
+  font-size: large;
+}
+
+/* 図版用スペース確保 */
+.u-atari {
+  padding: 1.75rem;
+}
+
+/* レイアウトの基本スタイル */
+.layout--flex {
+  display: flex;
+  align-items: center;
+}
+.layout--flex-top {
+  display: flex;
+  align-items: top;
+}
+
+/* 全体の基本スタイル */
+html {
+  font-size: 62.5%;
+}
+html body {
+  margin: 0;
+  padding: 0;
+  color: dimgray;
+  background-color: white;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 1.4rem;
+}
+
+/* ヘッダ領域の基本スタイル */
+.header {
+  margin: 0;
+  padding: 0;
+  padding: 1.05rem 1.89rem;
+  color: #EDEDED;
+  background-color: black;
+}
+.header__title {
+  margin: 0;
+  padding: 0;
+  font-size: 1.89rem;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+.header__nav {
+  margin: 0;
+  padding: 0;
+  width: calc(100vw - 3.78rem);
+  list-style-type: none;
+}
+.header__nav-item {
+  margin: 0;
+  padding: 0;
+  margin-left: 4.2rem;
+}
+.header__nav-item.right-align {
+  margin-left: auto;
+}
+.header__link {
+  color: darkkhaki;
+  text-decoration: none;
+}
+.header__link:hover {
+  color: peru;
+  font-weight: bold;
+}
+.header__link--logout {
+  border: 1px solid dimgray;
+  border-radius: 5px;
+  color: #EDEDED;
+  background: dimgray;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border: 1px;
+  border-radius: 3px;
+  padding: 0.63rem 1.4rem;
+  font-size: 1.05rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+.header__link--logout:hover {
+  color: peru;
+}
+.header__link--logout:active {
+  background-color: gainsboro;
+}
+.header__link--logout:hover {
+  color: peru;
+}
+.header__link--logout:active {
+  background-color: gainsboro;
+}
+.header__link--modify {
+  border: 1px solid dimgray;
+  border-radius: 5px;
+  color: #EDEDED;
+  background: dimgray;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border: 1px;
+  border-radius: 3px;
+  padding: 0.63rem 1.4rem;
+  font-size: 1.05rem;
+  font-weight: bold;
+  text-decoration: none;
+  background-color: red;
+  margin-left: 1.89rem;
+  font-size: 1.05rem;
+}
+.header__link--modify:hover {
+  color: peru;
+}
+.header__link--modify:active {
+  background-color: gainsboro;
+}
+.header__link--modify:hover {
+  color: peru;
+}
+.header__link--modify:active {
+  background-color: gainsboro;
+}
+.header__link--modify:hover {
+  color: white;
+}
+.header__link--modify:active {
+  background-color: tomato;
+}
+.header__page--company {
+  color: white;
+  background-color: #3498DB;
+}
+.header__page--contact {
+  color: white;
+  background-color: #1ABC9C;
+}
+.header__title--page-title {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  padding: 0.35rem;
+}
+
+/* フッタ領域の基本スタイル */
+.footer {
+  margin: 0;
+  padding: 0;
+  padding: 1.05rem 1.05rem;
+  color: #EDEDED;
+  background-color: black;
+}
+.footer__body--copyright {
+  font-family: "Times New Roman", "YuMincho", "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho";
+  text-align: center;
+  font-style: italic;
+}
+
+.form {
+  margin: 0;
+  padding: 0;
+}
+.form__title {
+  padding: 0 1.05rem;
+  font-size: 1.75rem;
+  font-weight: bold;
+  text-align: center;
+}
+.form__container {
+  margin: 0;
+  padding: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.form__container--login {
+  margin: 0;
+  padding: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-width: 0.75px;
+  margin: 3.85rem auto;
+  padding: 0rem 4.2rem;
+}
+.form__container--search {
+  border-width: 0;
+}
+.form__container--update {
+  margin: 0;
+  padding: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-width: 0;
+}
+
+/**
+ * リンクの左外側余白の指定
+ */
+/**
+ * ボタンの形状を設定：ポイント時は手、押下時は背景色を変更する
+ */
+/* 入力部品の基本スタイル */
+.input-item {
+  margin: 1.75rem;
+}
+.input--submit {
+  margin-top: 2.45rem;
+  margin-left: 13.3rem;
+  margin-bottom: 2.45rem;
+}
+.input__label {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  width: 11.2rem;
+}
+.input__link {
+  text-decoration: none;
+}
+.input__link--signup {
+  margin-left: 10.5rem;
+}
+.input__link--cancel {
+  margin-left: 3.5rem;
+}
+.input__link--icon:link {
+  color: dimgray;
+}
+.input__link--icon:visited {
+  color: dimgray;
+}
+.input__link--icon:hover {
+  color: tomato;
+}
+.input__link--delete {
+  margin-left: auto;
+}
+.input__button, .input__button--search {
+  margin: 0;
+  padding: 0;
+  border: 1px solid dimgray;
+  border-radius: 5px;
+  color: dimgray;
+  background-color: #EDEDED;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.21rem 0.7rem;
+}
+.input__button:hover, .input__button--search:hover {
+  cursor: pointer;
+}
+.input__button:active, .input__button--search:active {
+  background-color: lightgray;
+}
+.input__button--search {
+  color: white;
+  background-color: navy;
+  width: 28rem;
+  padding: 1.05rem 0;
+}
+.input__text, .input__select {
+  margin: 0;
+  padding: 0;
+  border: 1px solid dimgray;
+  border-color: dimgray;
+  padding: 0 0.35rem;
+  border-radius: 5px;
+  border-color: lightgray;
+  width: 28rem;
+  height: 3.15rem;
+}
+.input__text::-moz-placeholder, .input__select::-moz-placeholder {
+  color: lightgray;
+}
+.input__text::placeholder, .input__select::placeholder {
+  color: lightgray;
+}
+.input__text--read-only {
+  border-width: 0;
+  cursor: not-allowed;
+}
+.input__radio--read-only {
+  pointer-events: none;
+}
+
+/* 箇条書きの基本スタイル */
+.list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.list--error {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  color: tomato;
+}
+.list__contact {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  line-height: 1.5;
+}
+.list__contact-item {
+  margin: 0;
+  padding: 0;
+  margin: 0.35rem 0;
+  padding: 0.35rem 0;
+  border-bottom: 1px solid lightgray;
+}
+.list__contact-item:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+.list__contact-item:last-child {
+  border-bottom: 0;
+}
+
+/* テーブル枠の基本スタイル */
+.figure {
+  margin: 0;
+  padding: 0;
+}
+.figure--list {
+  padding: 1.75rem 0;
+}
+.figure__table table {
+  border-width: 0;
+  font-size: 1.25rem;
+  border-collapse: collapse;
+}
+.figure__table table th, .figure__table table td {
+  border-width: 0;
+  padding: 0.7rem 1.4rem;
+}
+.figure__table table tr {
+  border-bottom: 1px solid lightgray;
+}
+.figure__table table th {
+  color: dimgray;
+  font-size: 1.1rem;
+  text-align: left;
+}
+.figure__table .table--company .table__cell--header {
+  color: #3498DB;
+}
+.figure__table .table--contact .table__cell--header {
+  color: #1ABC9C;
+}
+.table--detail {
+  margin-left: 1.05rem;
+}
+.table--detail .table__row {
+  border-width: 0;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,91 @@
+@charset "utf-8";
+@forward "../../common/";
+@forward "./mixin";
+@use "../../common/" as common;
+@use "./mixin" as *;
+
+/* ヘッダ領域の基本スタイル */
+.header {
+	// 基本スタイル
+	@include set-page-part-style-parent(0.75, 1.35);
+	
+	// サイトタイトルのスタイル
+	&__title {
+		// ボックスモデルの初期化
+		@include common.clear-box-model();
+		// ヘッダタイトル（サイトタイトル）の基本スタイル
+		font-size: common.$font-size--site-title;
+		// タイトルの縮小を防止
+		flex-shrink: 0;
+		// テキストの改行を防止
+		white-space: nowrap;
+	}
+
+	// ヘッダ内ナビゲーションリンクリストのスタイル
+	&__nav {
+		// ボックスモデルの初期化
+		@include common.clear-box-model();
+		width: calc(100vw - common.$font-size--site-title * 2); // ログアウトリンクを右寄せにするため
+		// ヘッダナビゲーションのスタイル
+		list-style-type: none;
+	}
+
+	// ヘッダ内ナビゲーションリンク項目のスタイル
+	&__nav-item {
+		// ボックスモデルの初期化
+		@include common.clear-box-model();
+		margin-left: common.calcSizeByScale(3.0);
+		&.right-align {
+			margin-left: auto; // .header__navが「display: flex;」になっていることおよび幅が設定されていること！
+		}
+	}
+
+	// ヘッダ内ナビゲーションリンクのスタイル
+	&__link {
+		color: common.$header-link-color--fore;
+		text-decoration: none;
+		&:hover {
+			color: common.$header-link-color--active;
+			font-weight: bold;
+		}
+
+		// ログアウトリンクのスタイル：ボタン風スタイルに設定
+		&--logout {
+			@include set-button-like-style();
+		}
+
+		// 新規登録リンク
+		&--modify {
+			@include set-button-like-style();
+			background-color: common.$button-color--modify;
+			margin-left: common.calcSizeByScale(1.35);
+			font-size: common.calcSizeByScale(0.75);
+			&:hover {
+				color: common.$button-color--fore;
+			}
+			&:active {
+				background-color: common.$button-color--modify-active;
+			}
+		}
+	}
+
+	// ページヘッダ
+	&__page {
+		&--company {
+			// 取引先ページヘッダのスタイル
+			@include set-page-header-style($target: "company");
+		}
+		&--contact {
+			// 担当者ページヘッダのスタイル
+			@include set-page-header-style($target: "contact");
+		}
+	}
+
+	// ページヘッダタイトル
+	&__title--page-title {
+		@include common.clear-box-model();
+		display: flex;
+		align-items: center;
+		padding: common.calcSizeByScale(0.25);
+	}
+}

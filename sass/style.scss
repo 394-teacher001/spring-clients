@@ -1,0 +1,10 @@
+@charset "utf-8";
+@forward "./partials/common/";
+@forward "./partials/layout/";
+@forward "./partials/base/";
+@forward "./partials/page/";
+@forward "./partials/component/";
+@use "./partials/common/" as common;
+
+
+
