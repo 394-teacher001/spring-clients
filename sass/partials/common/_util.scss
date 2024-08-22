@@ -1,0 +1,95 @@
+@charset "utf-8";
+@forward "./funxions";
+@use "./funxions" as *;
+
+/* 枠線の非表示 */
+.u-border--hidden {
+	border-width: 0;
+}
+
+/* ブロックエレメントの非表示 */
+.u-block--hidden {
+	display: none;
+}
+
+/* ブロックエレメントの上端寄せ */
+.u-align--top {
+	display: inline-block;
+	vertical-align: top;
+}
+
+/* ブロックエレメントの中央寄せ */
+.u-align--center {
+	width: fit-content;
+	margin: 0 auto;
+}
+
+/* ブロックエレメントの右寄せ */
+.u-align--right {
+	margin-left: auto;
+}
+
+/* インラインエレメントの中央寄せ */
+.u-text-align--center {
+	text-align: center;
+}
+
+/* インラインエレメントの左寄せ */
+.u-text-align--left {
+	text-align: left;
+}
+
+/* インラインエレメントの右寄せ */
+.u-text-align--right {
+	text-align: right;
+}
+
+/* 箇条書き行頭文字の非表示 */
+.u-list-style--none {
+	list-style-type: none;
+}
+
+/* フォントスタイルの斜体 */
+.u-font-style--italic {
+	font-style: italic;
+}
+
+/* エラーメッセージの文字色 */
+.u-text--error {
+	color: tomato;
+}
+
+/* インライン要素に設定 */
+.u-display--inline {
+	display: inline;
+}
+
+/* アイコンとしての設定 */
+.u-icon {
+	display: inline-block;
+	margin-right: calcSizeByScale(1.0);
+}
+
+/* 必須項目表示 */
+.u-required {
+	&:after {
+		content: "*";
+	}
+}
+
+/* 小さい文字サイズ */
+.u-text--small {
+	font-size: 75%;
+}
+
+/* 大きい文字サイズ */
+.u-text--large {
+	font-size: large;
+}
+
+/* 図版用スペース確保 */
+.u-atari {
+	padding: calcSizeByScale(1.25);
+}
+
+

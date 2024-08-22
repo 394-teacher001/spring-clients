@@ -1,0 +1,27 @@
+@charset "utf-8";
+@forward "../common/";
+@use "../common/" as common;
+@forward "./mixin";
+@use "./mixin" as *;
+
+/* テーブル枠の基本スタイル */
+.figure {
+	@include common.clear-box-model();
+  &--list {
+    padding: common.calcSizeByScale(1.25) 0;
+  }
+	&__table {
+		// テーブルの基本スタイル：デフォルトは罫線表示のテーブル
+		@include set-default-table-style($is-bordered: no, $is-bottom-bordered: yes);
+		@include switch-theme-color-to-th-parent();
+	}
+}
+
+.table {
+  &--detail {
+    margin-left: common.calcSizeByScale(0.75);
+    .table__row {
+      border-width: 0;
+    }
+  }
+}

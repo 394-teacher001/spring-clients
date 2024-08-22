@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Page Dispatcher</title>
+	<style>
+		html {
+			font-size: 62.5%;
+		}
+		body {
+			font-size: 1.4rem;
+			margin: 20px 75px;
+		}
+		h1 {
+			font-size: 150%;
+			margin: 0;
+			padding: 0;
+		}
+		.copyright {
+			font-size: small;
+			font-family: 'Times New Roman', Times, serif;
+			font-style: italic;
+		}
+
+		table {
+			margin: 16px 0;
+		}
+
+		td:nth-child(2) {
+			padding: 0 0 0 1.4rem;
+		}
+		
+	</style>
+</head>
+<body>
+	<header>
+		<h1><a href="/">Page Dispatcher</a></h1>
+	</header>
+	<main>
+		<article>
+			<table>
+				<tr>
+					<td>顧客管理システム</td>
+					<td><a href="/login">ログイン画面</a></td>
+				</tr>
+			</table>
+		</article>
+	</main>
+	<footer>
+		<div class="copyright">&copy; 2024 Office HOGE</div>
+	</footer>
+</body>
+</html>

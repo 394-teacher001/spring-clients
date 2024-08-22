@@ -1,0 +1,23 @@
+@charset "utf-8";
+@forward "../common/";
+@use "../common/" as common;
+
+// /**
+//  * フレックスレイアウトの実現 ─ displayをflexにして指定された鉛直方向の揃えに調整する
+//  * @param $align-items 垂直方向の揃え（top：上端揃え　center：中央揃え　bottom：下端揃え）
+//  */
+@mixin set-flex-with-align($align-items: center) {
+	display: flex;
+	align-items: $align-items;
+}
+
+
+/* レイアウトの基本スタイル */
+.layout {
+	&--flex {
+		@include set-flex-with-align(center);
+		&-top {
+			@include set-flex-with-align(top);
+		}
+	}
+}

@@ -1,0 +1,19 @@
+@charset "utf-8";
+@forward "../../common/";
+@forward "./mixin";
+@use "../../common/" as common;
+@use "./mixin" as *;
+
+/* フッタ領域の基本スタイル */
+.footer {
+	// 基本スタイル
+	@include set-page-part-style-parent(0.75);
+	&__body {
+		&--copyright {
+			// 著作権表示文字列のスタイル
+			font-family: common.$font-family--copyright;
+			text-align: center;
+			font-style: italic;
+		}
+	}
+}

@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html>
+
+<!-- ヘッド要素 -->
+
+<head>
+	<meta charset="UTF-8">
+	
+	<title>取引先登録 ─ 顧客管理システム</title>
+	<link rel="stylesheet" href="../static/css/style.css">
+	<link rel="stylesheet" href="/css/style.css">
+	<meta charset="UTF-8">
+	
+	<link rel="stylesheet" href="../static/css/style.css">
+	<link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+		
+	<!-- ヘッダ領域 -->
+	
+	<header class="header layout--flex">
+		<h1 class="header__title">顧客管理システム</h1>
+		
+		<ol class="header__nav layout--flex">
+			<li class="header__nav-item"><a class="header__link" href="/companies/list">取引先</a></li>
+			<li class="header__nav-item"><a class="header__link" href="/contacts/list">担当者</a></li>
+			<li class="header__nav-item right-align"><a class="header__link--logout" href="/logout">ログアウト</a></li>
+		</ol>
+		
+	</header>
+	
+
+	<!-- コンテンツ領域 -->
+	
+	<main class="main">
+		<article class="main__container">
+			<header class="header header__page--company layout--flex">
+				<h2 class="header__title--page-title">
+					<span class="material-symbols-outlined u-icon" style="font-size: 150%;">add_circle</span> 取引先登録
+				</h2>
+			</header>
+			<section>
+				<form class="form" action="" method="post">
+					<fieldset class="form__container--login">
+						<legend class="form__title">取引先登録</legend>
+						<p class="u-text--small u-text-align--right">*は必須項目です。</p>
+						
+						
+							
+						
+
+						
+						<div class="input-item">
+							<label class="input__label u-required">会社名</label>
+							<input class="input__text" type="text" name="name" placeholder="会社名"
+							       value="" />
+						</div>
+						<div class="input-item">
+							<label class="input__label u-required">優先度</label>	
+							
+								<input type="radio" id="5" class="input__radio" name="rank"
+								       value="5" />
+								<label for="5">5</label>
+							
+								<input type="radio" id="4" class="input__radio" name="rank"
+								       value="4" />
+								<label for="4">4</label>
+							
+								<input type="radio" id="3" class="input__radio" name="rank"
+								       value="3" checked="checked" />
+								<label for="3">3</label>
+							
+								<input type="radio" id="2" class="input__radio" name="rank"
+								       value="2" />
+								<label for="2">2</label>
+							
+								<input type="radio" id="1" class="input__radio" name="rank"
+								       value="1" />
+								<label for="1">1</label>
+							
+						</div>
+						<div class="input-item">
+							<label class="input__label u-required">事業内容</label>
+							<input class="input__text" type="text" name="industry" placeholder="事業内容"
+							       value="" />
+						</div>
+						<div class="input-item">
+							<label class="input__label u-required">郵便番号</label>
+							<input class="input__text" type="text" name="zipcode" placeholder="郵便番号"
+							       value="" /><br />
+						</div>
+						<div class="input-item">
+							<label class="input__label u-required">所在地</label>
+							<input class="input__text" name="address" placeholder="所在地"
+							       value="" />
+						</div>
+						<div class="input-item">
+							<label class="input__label u-required">電話番号</label>
+							<input class="input__text" type="text" name="phone" placeholder="電話番号"
+							       value="" />
+						</div>
+						<div class="input-item">
+							<label class="input__label">ウェブサイト</label>
+							<input class="input__text" type="text" name="website" placeholder="ウェブサイト"
+							value="" />
+						</div>
+						<div class="input-item">
+							<label class="input__label">地図URL</label>
+							<input class="input__text" type="text" name="map" placeholder="地図URL"
+							value="" />
+						</div>
+						<div class="input-item input--submit">
+							<button class="input__button" formaction="/companies/confirm" formmethod="post">確認画面へ</button>
+							<a class="input__link--cancel" href="/companies/cancel">キャンセル</a>
+						</div>
+					</fieldset>
+				</form>
+			</section>
+		</article>
+	</main>
+	
+
+	<!-- フッタ領域 -->
+	
+	<footer class="footer">
+		<div id="copyright" class="footer__body--copyright">&copy;2024 Java研修</div>
+	</footer>
+	
+</body>
+</html>

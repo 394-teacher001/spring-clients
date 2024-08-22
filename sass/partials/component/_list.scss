@@ -1,0 +1,33 @@
+@charset "utf-8";
+@forward "../common/";
+@use "../common/" as common;
+
+/* 箇条書きの基本スタイル */
+.list {
+	// ボックスモデルの初期化
+	@include common.clear-box-model();
+	list-style-type: none;
+	&--error {
+		@include common.set-block-align--center();
+		color: tomato;
+	}
+	&__contact {
+		@include common.clear-box-model();
+		list-style-type: none;
+		line-height: 1.5;
+		&-item {
+			@include common.clear-box-model();
+			margin: common.calcSizeByScale(0.25) 0;
+			padding: common.calcSizeByScale(0.25) 0;
+			border-bottom: 1px solid common.$accent-color--lightgray;
+			&:first-child {
+				margin-top: 0;
+				padding-top: 0;
+			}
+			&:last-child {
+				border-bottom: 0;
+			}
+		}
+	}
+}
+

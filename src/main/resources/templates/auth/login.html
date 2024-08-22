@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+			xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+			layout:decorate="~{layout/layout}">
+<head>
+	<title>ログイン ─ 顧客管理システム</title>
+</head>
+<body>
+	<th:block layout:fragment="content">
+	<main class="main">
+		<article class="main__container">
+			<form class="form" action="/login" method="post">
+				<fieldset class="form__container--login">
+					<legend class="form__title">ログイン</legend>
+
+					<!--/* エラーメッセージ表示 */-->
+					<th:block th:if="${error}">
+						<p class="u-text--error u-text-align--center" th:text="${error}"></p>
+					</th:block>
+					<!--/* ログイン情報入力領域 */-->
+					<div class="input-item">
+						<label class="input__label">メールアドレス</label>
+						<input class="input__text" type="email" name="email" placeholder="メールアドレス" />
+					</div>
+					<div class="input-item">
+						<label class="input__label">パスワード</label>
+						<input class="input__text" type="text" name="password" placeholder="パスワード" /><!-- type属性「text」は暫定的なもの：リリース時には「password」に修正する -->
+					</div>
+					<div class="input-item input--submit">
+						<button class="input__button" formaction="/login" formmethod="post">ログイン</button>
+						<a class="input__link--signup" href="/signup">ユーザ新規登録</a>
+					</div>
+				</fieldset>
+			</form>
+		</article>
+	</main>
+	</th:block>
+</body>
+</html>

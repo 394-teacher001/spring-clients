@@ -1,0 +1,76 @@
+@charset "utf-8";
+@forward "../../common/";
+@use "../../common/" as common;
+
+// /**
+//  * ヘッダ及びフッタの共通スタイル設定 ─ 指定された内側余白によるボックスモデルレイアウト、前景色と背景色を設定する
+//  * @param $paddiing-vartical-scale  鉛直方向の内側余白
+//  * @param $padding-horizontal-scale 垂直方向の内側余白：省略された場合は鉛直方向の内側余白
+//  */
+@mixin set-page-part-style-parent($paddiing-vartical-scale, $padding-horizontal-scale: $paddiing-vartical-scale) {
+	// ボックスモデルの初期化
+	@include common.clear-box-model();
+	// 内側ボックスモデルのスタイル
+	padding: common.calcSizeByScale($paddiing-vartical-scale) 
+					 common.calcSizeByScale($padding-horizontal-scale);
+	// 表示文字列の共通スタイル
+	color: common.$header-color--fore;
+	background-color: common.$header-color--back;
+}
+
+// /**
+//  * ボタン風の形状に整形する
+//  */
+@mixin set-like-button() {
+	// ボタン背景色のスイッチ
+	@include switch-button-color-parent();
+
+	// ボタンの矩形の設定
+	color: common.$header-color--fore;
+	background: common.$theme-color;
+	width: fit-content;
+	border: 1px;
+	border-radius: 3px;
+	padding: common.calcSizeByScale(0.45) common.calcSizeByScale(1.0);
+	font-size: common.calcSizeByScale(0.75);
+	font-weight: bold;
+	text-decoration: none;
+}
+
+// /**
+//  * マウスの動作によって表示を切り替える
+//  * @param $hover-color マウスポイント時のボタン背景色（デフォルト値：peru）
+//  * @param $active-color マウスボタン押下時のボタン背景色（デフォルト値：gainsboro）
+//  */
+@mixin switch-button-color-parent($hover-color: common.$header-link-color--active, $active-color: common.$header-logout-color--active) {
+	&:hover {
+		color: $hover-color;
+	}
+	&:active {
+		background-color: $active-color;
+	}
+}
+
+// /**
+//  * ボタン風の表示スタイルに設定する
+//  */
+@mixin set-button-like-style() {
+	@include common.set-oval();            // ボタンの基本スタイル（ボタンの形状）
+	@include set-like-button();            // ボタンの表示（ボックスモデル、前景色・背景色など）
+	@include switch-button-color-parent(); // ボタンの振舞い
+}
+
+// /**
+//  * ページヘッダのスタイルを切り替える
+//  * @param $target 表示コンテンツの内容（デフォルト値：company）
+//  */
+@mixin set-page-header-style($target: "company") {
+	color: common.$page-header--fore;
+	@if $target == "company" {
+		background-color: common.$page-header-color--company;
+	} @else {
+		background-color: common.$page-header-color--contact;
+	}
+
+}
+
